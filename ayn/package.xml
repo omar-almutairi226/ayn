@@ -1,21 +1,19 @@
 <?xml version="1.0"?>
-<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>ayn</name>
-  <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="htetwaiyan.zyme@gmail.com">zyme</maintainer>
-  <license>TODO: License declaration</license>
+  <version>0.0.1</version>
+  <description>prototype</description>
+
+  <maintainer email="htetwaiyan.zyme@gmail.com">Your Name</maintainer>
+  <license>MIT</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <depend>rclcpp</depend>
-  <depend>rclpy</depend>
-  <depend>geometry_msgs</depend>
-  <depend>std_msgs</depend>
-
-  <test_depend>ament_lint_auto</test_depend>
-  <test_depend>ament_lint_common</test_depend>
+  <depend>gazebo_ros</depend>
+  <depend>ros2launch</depend>
+  <depend>urdf</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>joint_state_publisher_gui</depend>
 
   <export>
     <build_type>ament_cmake</build_type>
