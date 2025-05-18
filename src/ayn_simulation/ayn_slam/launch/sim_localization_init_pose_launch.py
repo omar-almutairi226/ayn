@@ -154,7 +154,7 @@ def generate_launch_description():
     )
 
     init_pose_node_cmd = Node(
-        package='rom2109_nav2',
+        package='ayn_nav2',
         executable='init_robot_pose',
         name='init_robot_pose_by_custom_node',
         output="screen"
