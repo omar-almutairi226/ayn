@@ -31,3 +31,34 @@ ros2 launch ayn_nav2 ayn_navigation_launch.py
 # avoidance node
 
 - that would generate the heading for vibration device
+
+# Human Actor Simulation in ROS 2 with Ignition Gazebo (Gazebo Fortress)
+
+## 🛠️ Prerequisites
+
+- Ubuntu 22.04
+- ROS 2 Humble
+- Ignition Gazebo (Gazebo Fortress)
+
+---
+
+## 🔧 Step-by-Step Setup
+
+### 1. Update & install system tools
+
+```bash
+sudo apt update
+sudo apt install curl lsb-release gnupg software-properties-common
+
+#  Install Ignition Gazebo Fortress
+
+sudo sh -c 'echo "deb [arch=amd64] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" > /etc/apt/sources.list.d/gazebo-stable.list'
+curl -sSL http://packages.osrfoundation.org/gazebo.key | sudo apt-key add -
+sudo apt update
+sudo apt install ignition-fortress
+
+# Install ROS 2 + Ignition bridge tools
+sudo apt install ros-humble-ros-ign-gazebo
+
+# Running the script
+ign gazebo world_demo_with_actor.sdf
