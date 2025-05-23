@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
+
     <joint name="laser_joint" type="fixed">
         <parent link="base_link"/>
         <child link="laser_frame"/>
@@ -25,13 +26,12 @@
     </link>
 
 
-
     <gazebo reference="laser_frame">
         <material>Gazebo/Grey</material>
 
-        <sensor name="laser" type="ray">
+        <sensor name="base_scan" type="ray">
             <pose> 0 0 0 0 0 0 </pose>
-            <visualize>false</visualize>
+            <visualize>true</visualize>
             <update_rate>10</update_rate>
             <ray>
                 <scan>
