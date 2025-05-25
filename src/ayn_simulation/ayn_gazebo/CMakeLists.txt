@@ -28,6 +28,7 @@ install(
     rviz2
     worlds
     models
+    photos
   DESTINATION
     share/${PROJECT_NAME}/
 )
