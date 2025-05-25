@@ -27,6 +27,7 @@ install(
     launch
     rviz2
     worlds
+    models
   DESTINATION
     share/${PROJECT_NAME}/
 )
