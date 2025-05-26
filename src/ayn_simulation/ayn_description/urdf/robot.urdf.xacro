@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="ayn">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
 
     <xacro:include filename="inertial_macros.xacro" />
     <xacro:include filename="black_donut.xacro" />
@@ -8,10 +8,10 @@
     <xacro:include filename="ros2_control.xacro" />
 
     <xacro:include filename="lidar.xacro" />
+<!-- 
+    <xacro:include filename="camera.xacro" /> -->
 
-    <xacro:include filename="camera.xacro" />
-
-    <!-- <xacro:include filename="depth_camera.xacro" /> -->
+    <xacro:include filename="depth_camera.xacro" />
 
     <xacro:include filename="gps.xacro" />
     <xacro:include filename="imu.xacro" />

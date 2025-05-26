@@ -71,9 +71,15 @@
                     <far>8.0</far>
                 </clip>
             </camera>
-            <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+            <!-- <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
                 <frame_name>camera_optical_link</frame_name>
-            </plugin>
+            </plugin> -->
+            <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+            <cameraName>camera</cameraName>
+            <frameName>camera_optical_link</frameName>
+            <imageTopicName>image_raw</imageTopicName>
+            <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        </plugin>
         </sensor>
     </gazebo>
 

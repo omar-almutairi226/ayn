@@ -12,6 +12,7 @@ def generate_launch_description():
 
     use_sim_time = LaunchConfiguration('use_sim_time')
     pkg_path = os.path.join(get_package_share_directory('ayn_description'))
+    # xacro_file = os.path.join(pkg_path,'urdf','robot.urdf.xacro')
     xacro_file = os.path.join(pkg_path,'urdf','robot.urdf.xacro')
     robot_description_config = xacro.process_file(xacro_file)
 
@@ -30,12 +31,6 @@ def generate_launch_description():
         executable="joint_state_publisher",
     )
 
-    rviz_node = Node(
-        package='rviz2',
-        executable='rviz2',
-        arguments=['-d', os.path.join(pkg_path, 'rviz', 'ayn.rviz')],
-        condition=IfCondition(LaunchConfiguration('open_rviz'))
-    )
 
     return LaunchDescription([
         DeclareLaunchArgument(
@@ -44,7 +39,7 @@ def generate_launch_description():
             description='Use sim time if true'),
 
         robot_state_publisher_node,
-        #joint_state_node,
-        #rviz_node
+        # joint_state_node,
+
 
     ])
