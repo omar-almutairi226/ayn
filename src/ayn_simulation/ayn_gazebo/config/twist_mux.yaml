@@ -5,11 +5,11 @@ twist_mux:
         topic: cmd_vel_nav # rviz goal
         timeout: 0.5
         priority: 10
-      behavior:
-        topic: cmd_vel_bt # behavior tree
+      cmd_vel_topic:
+        topic: cmd_vel
         timeout: 0.5
         priority: 100
       joystick:
-        topic: cmd_vel_joy # behavior tree
+        topic: cmd_vel_joy # joystick
         timeout: 0.5
         priority: 100

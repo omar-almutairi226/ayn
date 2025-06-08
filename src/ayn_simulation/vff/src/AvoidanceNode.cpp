@@ -155,20 +155,26 @@ using namespace std::chrono_literals;
     marker.scale.y = 0.1;
 
     switch (vff_color) 
-    {
-      case RED:
-        marker.id = 0;
-        marker.color.r = 1.0;
-        break;
-      case GREEN:
-        marker.id = 1;
-        marker.color.g = 1.0;
-        break;
-      case BLUE:
-        marker.id = 2;
-        marker.color.b = 1.0;
-        break;
-    }
+{
+  case RED:
+    marker.id = 0;
+    marker.color.r = 1.0;
+    break;
+  case GREEN:
+    marker.id = 1;
+    marker.color.g = 1.0;
+    break;
+  case BLUE:
+    marker.id = 2;
+    marker.color.b = 1.0;
+    break;
+  default:
+    std::cerr << "Warning: Unhandled VFFColor enum value!" << std::endl;
+    marker.id = -1; // or some invalid ID to indicate error
+    marker.color.a = 0.0; // make it fully transparent
+    break;
+}
+
     marker.color.a = 1.0;
 
     return marker;
