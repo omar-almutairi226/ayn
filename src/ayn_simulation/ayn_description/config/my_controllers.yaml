@@ -13,13 +13,12 @@ diff_cont:
   ros__parameters:
 
     publish_rate: 50.0
-    publish_odom_tf: false
 
     base_frame_id: base_footprint
 
     left_wheel_names: ['left_wheel_joint']
     right_wheel_names: ['right_wheel_joint']
-    wheel_separation: 0.2
+    wheel_separation: 0.21
     wheel_radius: 0.05
 
     use_stamped_vel: false

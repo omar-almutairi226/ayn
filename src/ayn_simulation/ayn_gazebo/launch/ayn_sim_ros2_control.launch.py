@@ -70,7 +70,7 @@ def generate_launch_description():
             DeclareLaunchArgument('open_rviz', default_value='true', description='Open RViz.'),
             bot,
             gazebo_launch,
-            rviz_node,
+            # rviz_node,
             spawn_robot_node,
             controller,
         ]
