@@ -12,7 +12,8 @@ import xacro
 
 def generate_launch_description():
     gazebo_pkg = get_package_share_directory('ayn_gazebo')
-    description_pkg = get_package_share_directory('ayn_description')
+    # description_pkg = get_package_share_directory('ayn_description')
+    description_pkg = get_package_share_directory('rlbd_description')
     default_world_path = os.path.join(gazebo_pkg, 'worlds', 'empty_world.world')
     
     bot = IncludeLaunchDescription(
@@ -57,8 +58,9 @@ def generate_launch_description():
     spawn_robot_node = Node(
         package='gazebo_ros',
         executable='spawn_entity.py',
-        arguments=['-entity', 'ayn', '-topic', '/robot_description',
+        # arguments=['-entity', 'ayn', '-topic', '/robot_description',
         #arguments=["-database", "ayn", '-entity', 'ayn',
+        arguments=['-entity', 'black_donut', '-topic', '/robot_description',
         "-x", '0.0',
         "-y", '0.0',
         "-z", '0.2'],
