@@ -62,17 +62,22 @@
             <camera>
                 <horizontal_fov>1.089</horizontal_fov>
                 <image>
-                    <format>B8G8R8</format>
-                    <width>640</width>
-                    <height>480</height>
+                  <width>640</width>
+                  <height>480</height>
+                  <format>B8G8R8</format>
                 </image>
                 <clip>
-                    <near>0.05</near>
-                    <far>8.0</far>
+                  <near>0.2</near>  <!-- Was 0.05, try 0.2 or 0.3 -->
+                  <far>8.0</far>
                 </clip>
             </camera>
+
             <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
                 <frame_name>camera_optical_link</frame_name>
+                <cameraName>camera</cameraName>
+                <imageTopicName>image_raw</imageTopicName>
+                <depthImageTopicName>depth/image_raw</depthImageTopicName>
+                <pointCloudTopicName>points</pointCloudTopicName>
             </plugin>
         </sensor>
     </gazebo>
