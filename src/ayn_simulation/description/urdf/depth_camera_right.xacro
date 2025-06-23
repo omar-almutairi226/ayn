@@ -2,13 +2,13 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
 
-    <joint name="camera_joint" type="fixed">
+    <joint name="camera_joint_right" type="fixed">
         <parent link="base_link"/>
-        <child link="camera_frame"/>
-        <origin xyz="0 0 0.3" rpy="0 0 0"/>
+        <child link="camera_frame_right"/>
+        <origin xyz="0 0 1.3" rpy="0 0 0"/>
     </joint>
 
-    <link name="camera_frame">
+    <link name="camera_frame_right">
         <!-- <visual>
             <geometry>
                 <cylinder radius="0.05" length="0.06"/>
@@ -31,13 +31,13 @@
 
 
 
-    <joint name="camera_optical_joint" type="fixed">
-        <parent link="camera_frame"/>
-        <child link="camera_optical_link"/>
-        <origin xyz="0.12 0 0" rpy="-1.5707 0 -1.5707"/>
+    <joint name="camera_optical_right_joint" type="fixed">
+        <parent link="camera_frame_right"/>
+        <child link="camera_optical_right_link"/>
+        <origin xyz="0 -0.12 0" rpy="-1.5707 0 3.1416"/>
     </joint>
 
-    <link name="camera_optical_link">
+    <link name="camera_optical_right_link">
         <visual>
             <geometry>
                 <box size="0.4 0.03 0.02"/>
@@ -52,10 +52,10 @@
     </link>
 
 
-    <gazebo reference="camera_frame">
+    <gazebo reference="camera_frame_right">
         <material>Gazebo/Blue</material>
 
-        <sensor name="camera" type="depth">
+        <sensor name="camera_right" type="depth">
             <pose>0.064 -0.065 0.094  0 0 0 </pose>
             <visualize>true</visualize>
             <update_rate>10</update_rate>
@@ -72,9 +72,12 @@
                 </clip>
             </camera>
 
-            <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-                <frame_name>camera_optical_link</frame_name>
-                <cameraName>camera</cameraName>
+            <plugin name="camera_right_controller" filename="libgazebo_ros_camera.so">
+                <ros>
+                    <namespace>camera_right</namespace>
+                </ros>
+                <frame_name>camera_optical_right_link</frame_name>
+                <cameraName>camera_right</cameraName>
                 <imageTopicName>image_raw</imageTopicName>
                 <depthImageTopicName>depth/image_raw</depthImageTopicName>
                 <pointCloudTopicName>points</pointCloudTopicName>

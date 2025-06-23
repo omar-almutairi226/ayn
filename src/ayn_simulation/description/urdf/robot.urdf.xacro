@@ -11,7 +11,9 @@
 <!-- 
     <xacro:include filename="camera.xacro" /> -->
 
-    <xacro:include filename="depth_camera.xacro" />
+    <xacro:include filename="depth_camera_front.xacro" />
+    <xacro:include filename="depth_camera_left.xacro" />
+    <xacro:include filename="depth_camera_right.xacro" />
 
     <xacro:include filename="gps.xacro" />
     <xacro:include filename="imu.xacro" />
